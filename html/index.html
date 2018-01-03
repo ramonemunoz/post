@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>Post App</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="nav">
+        <li><a href="#" id="logo" class="logo">POST</a></li>
+        <li><a href="#" id="menuOne" class="menuLink">Contact</a></li>
+        <li><a href="#" id="menuTwo" class="menuLink">About</a></li>
+      </ul>
+    </nav>
+<hr />
+    <div class="container">
+      <img class="image" src="http://via.placeholder.com/600x400" />
+      <img class="image" src="http://via.placeholder.com/600x400" />
+      <img class="image" src="http://via.placeholder.com/600x400" />
+      <img class="image" src="http://via.placeholder.com/600x400" />
+      <img class="image" src="http://via.placeholder.com/600x400" />
+      <img class="image" src="http://via.placeholder.com/600x400" />
+      <img class="image" src="http://via.placeholder.com/600x400" />
+      <img class="image" src="http://via.placeholder.com/600x400" />
+    </div>
+
+    <script type="text/javascript">
+    function resizeHeaderOnScroll() {
+	const distanceY = window.pageYOffset || document.documentElement.scrollTop;
+	const shrinkOn = 20;
+	const logo = document.getElementById('logo');
+	const menuLinkOne = document.getElementById('menuOne');
+	const menuLinkTwo = document.getElementById('menuTwo');
+
+	if (distanceY > shrinkOn) {
+		logo.classList.add('small');
+		menuLinkOne.classList.add('smaller');
+		menuLinkTwo.classList.add('smaller');
+	} else {
+		logo.classList.remove('small');
+		menuLinkOne.classList.remove('smaller');
+		menuLinkTwo.classList.remove('smaller');
+	}
+}
+
+window.addEventListener('scroll', resizeHeaderOnScroll);
+</script>
+  </body>
+</html>
