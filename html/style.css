@@ -1,64 +1,49 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 
-/* Overiding Default Styles */
 body {
 	margin: 0px;
 }
-ul {
-	padding: 0px;
-}
-hr {
-	padding-top: 58px;
-	border: none;
-	border-bottom: 3px solid #6b686b;
-}
-
-.nav {
-	max-width: 1440px;
-	height: 100px;
-	position: fixed;
-	top: 0;
+.navContainer {
 	width: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
+	position: fixed;
 }
-.nav .logo {
-	width: 25%;
-	float: left;
+.nav {
+	display: -webkit-flex;
+	display: flex;
+	flex: 0 0 auto;
+	justify-content: center;
+	align-items: flex-end;
+	border-bottom: 3px solid #6b686b;
+	transition: all 0.2s ease;
+	margin-left: -8px;
+	margin-right: -8px;
+	margin-top: -8px;
 }
-.nav .menuLink {
-	width: 12.5%;
-	float: right;
-	padding-top: 43px;
+.nav li:first-child {
+	margin-right: auto;
 }
 .nav li {
 	list-style: none;
 }
-.nav a.logo {
-	font-size: 64px;
-}
 .nav a {
+	margin: 10px 10px 0px 10px;
 	color: #000;
 	display: block;
+	padding-right: 60px;
 	text-decoration: none;
 	font-family: 'Fjalla One', sans-serif;
 	font-size: 20px;
-	text-align: bottom;
-	vertical-align: bottom;
+	transition: all 0.5s ease;
 }
 
-.small {
-	font-size: 36px !important;
+.nav .logo {
+	font-size: 64px;
+	margin-bottom: -14px;
 }
-.smaller {
-	font-size: 12px !important;
-}
+
 .container {
 	max-width: 600px;
-	padding-top: 160px;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
@@ -70,4 +55,18 @@ hr {
 	height: auto;
 	display: block;
 	margin-top: 45px;
+}
+
+.container .image:first-child {
+	margin-top: 100px;
+}
+
+.small {
+	font-size: 32px !important;
+}
+.smaller {
+	font-size: 12px !important;
+}
+.border-none {
+	border-bottom: 3px solid rgba(0, 0, 0, 0);
 }

@@ -10,14 +10,14 @@
     <title>Post App</title>
   </head>
   <body>
-    <nav>
-      <ul class="nav">
+    <nav class="navContainer">
+      <ul id="nav" class="nav">
         <li><a href="#" id="logo" class="logo">POST</a></li>
-        <li><a href="#" id="menuOne" class="menuLink">Contact</a></li>
         <li><a href="#" id="menuTwo" class="menuLink">About</a></li>
+        <li><a href="#" id="menuOne" class="menuLink">Contact</a></li>
+
       </ul>
     </nav>
-<hr />
     <div class="container">
       <img class="image" src="http://via.placeholder.com/600x400" />
       <img class="image" src="http://via.placeholder.com/600x400" />
@@ -36,15 +36,18 @@
 	const logo = document.getElementById('logo');
 	const menuLinkOne = document.getElementById('menuOne');
 	const menuLinkTwo = document.getElementById('menuTwo');
+	const nav = document.getElementById('nav');
 
 	if (distanceY > shrinkOn) {
 		logo.classList.add('small');
 		menuLinkOne.classList.add('smaller');
 		menuLinkTwo.classList.add('smaller');
+		nav.classList.add('border-none');
 	} else {
 		logo.classList.remove('small');
 		menuLinkOne.classList.remove('smaller');
 		menuLinkTwo.classList.remove('smaller');
+		nav.classList.remove('border-none');
 	}
 }
 
