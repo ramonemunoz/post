@@ -29,6 +29,10 @@
       <img class="image" src="http://via.placeholder.com/600x400" />
     </div>
 
+    <div class="buttonContainer">
+      <button class="actionButton"><div class="plusSign">+</div></button>
+    </div>
+
     <script type="text/javascript">
     function resizeHeaderOnScroll() {
 	const distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -50,6 +54,14 @@
 		nav.classList.remove('border-none');
 	}
 }
+
+const trigger = document.querySelector('.buttonContainer');
+const container = document.querySelector('.plusSign');
+
+trigger.addEventListener('click', () => {
+	console.log('clicked button');
+	container.classList.toggle('button-active');
+});
 
 window.addEventListener('scroll', resizeHeaderOnScroll);
 </script>
