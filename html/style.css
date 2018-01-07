@@ -73,7 +73,7 @@ body {
 
 .buttonContainer {
 	position: fixed;
-	bottom: 75px;
+	bottom: 125px;
 	right: 5%;
 	border: none;
 	transition: 0.3s ease-out;
@@ -167,7 +167,7 @@ body {
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
 	.buttonContainer {
-		bottom: 50px;
+		bottom: 125px;
 		right: 5%;
 	}
 }
@@ -179,7 +179,7 @@ body {
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
 	.buttonContainer {
-		bottom: 75px;
+		bottom: 125px;
 		right: 10%;
 	}
 }
@@ -187,7 +187,7 @@ body {
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1400px) {
 	.buttonContainer {
-		bottom: 75px;
+		bottom: 125px;
 		right: 20%;
 	}
 }
@@ -195,7 +195,7 @@ body {
 /* xLarge Devices, Wide Screens */
 @media only screen and (min-width: 1800px) {
 	.buttonContainer {
-		bottom: 75px;
+		bottom: 125px;
 		right: 30%;
 	}
 }
