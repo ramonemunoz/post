@@ -33,6 +33,12 @@
       <button class="actionButton"><div class="plusSign">+</div></button>
     </div>
 
+    <div id="upload" class="uploadContainer">
+      <div class="uploadTab">
+        <button class="uploadButton">Upload</button>
+      </div>
+    </div>
+
     <script type="text/javascript">
     function resizeHeaderOnScroll() {
 	const distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -57,10 +63,12 @@
 
 const trigger = document.querySelector('.buttonContainer');
 const container = document.querySelector('.plusSign');
+const uploadContainer = document.getElementById('upload');
 
 trigger.addEventListener('click', () => {
 	console.log('clicked button');
 	container.classList.toggle('button-active');
+	uploadContainer.classList.toggle('show');
 });
 
 window.addEventListener('scroll', resizeHeaderOnScroll);

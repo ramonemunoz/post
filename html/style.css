@@ -130,3 +130,35 @@ body {
 	transform-origin: 51% 53%;
 	transform-style: preserve-3D;
 }
+.uploadContainer {
+	position: fixed;
+	width: 100%;
+	bottom: -100px;
+	display: flex;
+	justify-content: center;
+	transition: 0.3s ease-out;
+}
+
+.show {
+	bottom: 0px;
+}
+
+.uploadTab {
+	width: 500px;
+	height: 90px;
+	background-color: #fff;
+	border-radius: 10px 10px 0 0;
+	border: 3px solid #6b686b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.uploadButton {
+	width: 100px;
+	height: 50px;
+	border: 3px solid #6b686b;
+	border-radius: 10px;
+	font-size: 24px;
+	font-family: 'Fjalla One', sans-serif;
+	color: #6b686b;
+}
