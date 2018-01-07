@@ -73,9 +73,10 @@ body {
 
 .buttonContainer {
 	position: fixed;
-	bottom: 96px;
-	right: 15%;
+	bottom: 75px;
+	right: 5%;
 	border: none;
+	transition: 0.3s ease-out;
 }
 
 .actionButton {
@@ -161,4 +162,40 @@ body {
 	font-size: 24px;
 	font-family: 'Fjalla One', sans-serif;
 	color: #6b686b;
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+	.buttonContainer {
+		bottom: 50px;
+		right: 5%;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+	.buttonContainer {
+		bottom: 75px;
+		right: 10%;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1400px) {
+	.buttonContainer {
+		bottom: 75px;
+		right: 20%;
+	}
+}
+
+/* xLarge Devices, Wide Screens */
+@media only screen and (min-width: 1800px) {
+	.buttonContainer {
+		bottom: 75px;
+		right: 30%;
+	}
 }
