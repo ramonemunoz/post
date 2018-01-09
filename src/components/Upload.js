@@ -3,9 +3,9 @@ import React from 'react';
 class Upload extends React.Component {
 	render() {
 		return (
-			<div id="upload" class="uploadContainer">
-				<div class="uploadTab">
-					<button class="uploadButton">Upload</button>
+			<div id="upload" className="uploadContainer">
+				<div className="uploadTab">
+					<button className="uploadButton">Upload</button>
 				</div>
 			</div>
 		);
