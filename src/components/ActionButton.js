@@ -15,14 +15,12 @@ class ActionButton extends React.Component {
 		this.props.updateActionButton(actionButtonState);
 	}
 	render() {
-		const actionButtonClasses = `${this.props.buttonState} actionButton`
-
 		return (
 			<div className="buttonContainer">
 				<button
 					ref={button => (this.button = button)}
 					onClick={() => this.actionButtonClicked()}
-					className={actionButtonClasses}
+					className={`${this.props.buttonState} actionButton`}
 				>
 					<div className="plusSign">+</div>
 				</button>
