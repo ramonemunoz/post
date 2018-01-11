@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <title>Post App</title>
+</head>
+
+<body>
+  <nav class="navContainer">
+    <ul id="nav" class="nav">
+      <li>
+        <a href="#" id="logo" class="logo">POST</a>
+      </li>
+      <li>
+        <a href="#" id="menuTwo" class="menuLink">About</a>
+      </li>
+      <li>
+        <a href="#" id="menuOne" class="menuLink">Contact</a>
+      </li>
+
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="textContainer">
+      <h2>Title</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum tristique iaculis. Suspendisse tempor elementum
+        lacus, eget porta magna laoreet nec. Donec vehicula metus sed congue rutrum. Morbi dapibus arcu magna, a dapibus
+        odio elementum aliquet. Cras sit amet est id diam efficitur viverra a sed lacus. Quisque eu nulla est. Aenean dignissim
+        sapien risus, in aliquet nisl rutrum id. Cras rhoncus mauris vitae nibh laoreet bibendum. Duis ac lorem fringilla,
+        auctor tortor quis, semper felis. Nam molestie arcu a nunc blandit sagittis. Praesent in est vitae ex feugiat vestibulum.
+        Cras nec sem sit amet tellus aliquet suscipit vel id metus. Maecenas hendrerit enim elit, at sagittis mi accumsan
+        sed. Nulla et malesuada lorem. Etiam aliquet mattis massa, non mollis libero congue sagittis. Aenean in ante non
+        velit fringilla dignissim.</p>
+    </div>
+  </div>
+
+  <div class="buttonContainer">
+    <button class="actionButton">
+      <div class="plusSign">+</div>
+    </button>
+  </div>
+
+  <div id="upload" class="uploadContainer">
+    <div class="uploadTab">
+      <button class="uploadButton">Upload</button>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function resizeHeaderOnScroll() {
+      const distanceY = window.pageYOffset || document.documentElement.scrollTop;
+      const shrinkOn = 20;
+      const logo = document.getElementById('logo');
+      const menuLinkOne = document.getElementById('menuOne');
+      const menuLinkTwo = document.getElementById('menuTwo');
+      const nav = document.getElementById('nav');
+
+      if (distanceY > shrinkOn) {
+        logo.classList.add('small');
+        menuLinkOne.classList.add('smaller');
+        menuLinkTwo.classList.add('smaller');
+        nav.classList.add('border-none');
+      } else {
+        logo.classList.remove('small');
+        menuLinkOne.classList.remove('smaller');
+        menuLinkTwo.classList.remove('smaller');
+        nav.classList.remove('border-none');
+      }
+    }
+
+    const trigger = document.querySelector('.buttonContainer');
+    const container = document.querySelector('.plusSign');
+    const uploadContainer = document.getElementById('upload');
+
+    trigger.addEventListener('click', () => {
+      console.log('clicked button');
+      container.classList.toggle('button-active');
+      uploadContainer.classList.toggle('show');
+    });
+
+    window.addEventListener('scroll', resizeHeaderOnScroll);
+  </script>
+</body>
+
+</html>
