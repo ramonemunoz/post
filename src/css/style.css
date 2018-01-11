@@ -1,5 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
 
 body {
 	margin: 0px;
@@ -163,6 +165,19 @@ body {
 	font-family: 'Fjalla One', sans-serif;
 	color: #6b686b;
 }
+
+.textContainer{
+	margin-top: 35%;
+	font-family: 'Crimson Text', serif;
+	font-size: 14px;
+	color: #6b686b;
+}
+.textContainer h2{
+	font-size: 24px;
+	font-family: 'Fjalla One', sans-serif;
+	color: #6b686b;
+}
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
