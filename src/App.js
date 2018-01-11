@@ -31,8 +31,8 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<ActionButton updateActionButton={this.updateActionButton} />
-				<Upload />
+				<ActionButton updateActionButton={this.updateActionButton} buttonState={this.state.actionButton.status}/>
+				<Upload buttonState={this.state.actionButton.status}/>
 			</div>
 		);
 	}

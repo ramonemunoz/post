@@ -126,7 +126,7 @@ body {
 .plusSign {
 	transition: 0.3s ease-out;
 }
-.button-active {
+.clicked {
 	transform: rotate(45deg);
 	transform-origin: 51% 53%;
 	transform-style: preserve-3D;
