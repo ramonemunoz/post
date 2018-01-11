@@ -11,7 +11,7 @@ class ActionButton extends React.Component {
 		// container.classList.toggle("button-active");
 		// uploadContainer.classList.toggle("show");
 		//https://stackoverflow.com/questions/36403101/toggle-class-in-react/36404061
-		console.log(actionButtonState);
+		// console.log(actionButtonState);
 		this.props.updateActionButton(actionButtonState);
 	}
 	render() {
