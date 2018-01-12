@@ -1,38 +1,43 @@
 import React, { Component } from 'react';
 import ActionButton from './components/ActionButton';
 import Upload from './components/Upload';
+import Feed from './components/Feed';
 import './App.css';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.updateActionButton = this.updateActionButton.bind(this);
+		this.updateFeed = this.updateFeed.bind(this);
 		//get initial state
 		this.state = {
 			actionButton: {
 				status: 'notClicked'
-			}
+			},
+			feed:{}
 		};
 	}
 
 	updateActionButton(actionButtonState) {
 		const actionButton = { ...this.state.actionButton };
-		console.log('current state');
-		console.log(actionButton);
-		console.log('state being passed');
-		console.log(actionButtonState);
 		const css = actionButton.status === 'notClicked' ? 'clicked' : 'notClicked';
-		// console.log(css);
 		actionButton['status'] = css;
-		// console.log(actionButton);
 		this.setState({ actionButton });
+	}
+
+	updateFeed(post){
+		const feed = {...this.state.feed};
+		const timestamp = Date.now();
+		feed[`post-${timestamp}`] = post;
+		this.setState({feed})
 	}
 
 	render() {
 		return (
 			<div className="App">
+				<Feed feedState={this.state.feed}/>
 				<ActionButton updateActionButton={this.updateActionButton} buttonState={this.state.actionButton.status}/>
-				<Upload buttonState={this.state.actionButton.status}/>
+				<Upload updateFeed={this.updateFeed} buttonState={this.state.actionButton.status}/>
 			</div>
 		);
 	}
