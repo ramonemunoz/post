@@ -1,190 +1,225 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
-
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One");
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text");
 
 body {
-	margin: 0px;
+  margin: 0px;
 }
 .navContainer {
-	width: 100%;
-	position: fixed;
+  width: 100%;
+  position: fixed;
 }
 .nav {
-	display: -webkit-flex;
-	display: flex;
-	flex: 0 0 auto;
-	justify-content: center;
-	align-items: flex-end;
-	border-bottom: 1.25px solid #6b686b;
-	transition: all 0.2s ease;
-	margin-left: -8px;
-	margin-right: -8px;
-	margin-top: -8px;
+  display: -webkit-flex;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: flex-end;
+  border-bottom: 1.25px solid #6b686b;
+  transition: all 0.2s ease;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-top: -8px;
 }
 .nav li:first-child {
-	margin-right: auto;
+  margin-right: auto;
 }
 .nav li {
-	list-style: none;
+  list-style: none;
 }
 .nav a {
-	margin: 10px 10px 0px 10px;
-	color: #000;
-	display: block;
-	padding-right: 60px;
-	text-decoration: none;
-	font-family: 'Fjalla One', sans-serif;
-	font-size: 20px;
-	transition: all 0.5s ease;
+  margin: 10px 10px 0px 10px;
+  color: #000;
+  display: block;
+  padding-right: 60px;
+  text-decoration: none;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 20px;
+  transition: all 0.5s ease;
 }
 
 .nav .logo {
-	font-size: 64px;
-	margin-bottom: -14px;
+  font-size: 64px;
+  margin-bottom: -14px;
 }
 
 .container {
-	max-width: 600px;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container .image {
-	max-width: 100%;
-	height: auto;
-	display: block;
-	margin-top: 45px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 45px;
 }
 
 .container .image:first-child {
-	margin-top: 100px;
+  margin-top: 100px;
 }
 
 .small {
-	font-size: 32px !important;
+  font-size: 32px !important;
 }
 .smaller {
-	font-size: 12px !important;
+  font-size: 12px !important;
 }
 .border-none {
-	border-bottom: 1.25px solid rgba(0, 0, 0, 0);
+  border-bottom: 1.25px solid rgba(0, 0, 0, 0);
 }
 
 .buttonContainer {
-	position: fixed;
-	bottom: 125px;
-	right: 5%;
-	border: none;
-	transition: 0.3s ease-out;
+  position: fixed;
+  bottom: 125px;
+  right: 5%;
+  border: none;
+  transition: 0.3s ease-out;
 }
 
 .actionButton {
-	border-radius: 100%;
-	width: 54px;
-	height: 54px;
-	line-height: 54px;
-	font-size: 1.6rem;
-	border: none;
-	padding: 0px;
-	margin: 0px;
-	color: #6b686b;
-	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
-		0 3px 1px -2px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-	transition: 0.3s ease-out;
+  border-radius: 100%;
+  width: 54px;
+  height: 54px;
+  line-height: 54px;
+  font-size: 1.6rem;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  color: #6b686b;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease-out;
 }
 
 .actionButton:hover {
-	-webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
-		0 3px 1px -1px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-	position: relative;
-	cursor: pointer;
-	display: inline-block;
-	overflow: hidden;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-tap-highlight-color: transparent;
-	vertical-align: middle;
-	z-index: 1;
-	-webkit-transition: 0.3s ease-out;
-	transition: 0.3s ease-out;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+    0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 
 .actionButton:focus {
-	border: none;
-	background-color: #f7f7f7;
+  border: none;
+  background-color: #f7f7f7;
 }
 .actionButton:focus {
-	border: none;
-	outline: none;
+  border: none;
+  outline: none;
 }
 
 .plusSign {
-	transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 .clicked {
-	transform: rotate(45deg);
-	transform-origin: 51% 53%;
-	transform-style: preserve-3D;
+  transform: rotate(45deg);
+  transform-origin: 51% 53%;
+  transform-style: preserve-3D;
 }
 .uploadContainer {
-	position: fixed;
-	width: 100%;
-	bottom: -100px;
-	display: flex;
-	justify-content: center;
-	transition: 0.3s ease-out;
+  position: fixed;
+  width: 100%;
+  bottom: -100px;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease-out;
 }
 
 .show {
-	bottom: 0px;
+  bottom: 0px;
 }
 
 .uploadTab {
-	width: 300px;
-	height: 90px;
-	background-color: #fff;
-	border-radius: 10px 10px 0 0;
-	border: 1.25px solid #6b686b;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 300px;
+  height: 90px;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  border: 1.25px solid #6b686b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .uploadButton {
-	width: 100px;
-	height: 50px;
-	border: 1.25px solid #6b686b;
-	border-radius: 10px;
-	font-size: 24px;
-	font-family: 'Fjalla One', sans-serif;
-	color: #6b686b;
+  width: 100px;
+  height: 50px;
+  border: 1.25px solid #6b686b;
+  border-radius: 10px;
+  font-size: 24px;
+  font-family: "Fjalla One", sans-serif;
+  color: #6b686b;
 }
 
-.textContainer{
-	margin-top: 35%;
-	font-family: 'Crimson Text', serif;
-	font-size: 14px;
-	color: #6b686b;
+.textContainer {
+  margin-top: 35%;
+  font-family: "Crimson Text", serif;
+  font-size: 14px;
+  color: #6b686b;
 }
-.textContainer h2{
-	font-size: 24px;
-	font-family: 'Fjalla One', sans-serif;
-	color: #6b686b;
+.textContainer h2 {
+  font-size: 24px;
+  font-family: "Fjalla One", sans-serif;
+  color: #6b686b;
 }
 
+/* New Styles for upload buttons */
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  display: block;
+  cursor: pointer;
+  /* My Styles   */
+  /* width: 100px; */
+  padding: 15px 25px;
+  border: 1.25px solid #6b686b;
+  border-radius: 10px;
+  font-size: 24px;
+  font-family: "Fjalla One", sans-serif;
+  color: #6b686b;
+  transition: 0.3s ease-out;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #6b686b;
+  color: #ffffff;
+}
+
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-	.buttonContainer {
-		bottom: 125px;
-		right: 5%;
-	}
+  .buttonContainer {
+    bottom: 125px;
+    right: 5%;
+  }
 }
 
 /* Small Devices, Tablets */
@@ -193,24 +228,24 @@ body {
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-	.buttonContainer {
-		bottom: 125px;
-		right: 10%;
-	}
+  .buttonContainer {
+    bottom: 125px;
+    right: 10%;
+  }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1400px) {
-	.buttonContainer {
-		bottom: 125px;
-		right: 20%;
-	}
+  .buttonContainer {
+    bottom: 125px;
+    right: 20%;
+  }
 }
 
 /* xLarge Devices, Wide Screens */
 @media only screen and (min-width: 1800px) {
-	.buttonContainer {
-		bottom: 125px;
-		right: 30%;
-	}
+  .buttonContainer {
+    bottom: 125px;
+    right: 30%;
+  }
 }
