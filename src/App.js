@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ActionButton from './components/ActionButton';
 import Upload from './components/Upload';
 import Feed from './components/Feed';
+import base from './base.js';
 import './App.css';
 
 class App extends Component {
@@ -14,8 +15,17 @@ class App extends Component {
 			actionButton: {
 				status: 'notClicked'
 			},
-			feed:{}
+			feed: {}
 		};
+	}
+	componentWillMount() {
+		this.ref = base.syncState('/posts', {
+			context: this,
+			state: 'feed'
+		});
+	}
+	componentWillUnmount() {
+		base.removeBinding(this.ref);
 	}
 
 	updateActionButton(actionButtonState) {
@@ -25,19 +35,19 @@ class App extends Component {
 		this.setState({ actionButton });
 	}
 
-	updateFeed(post){
-		const feed = {...this.state.feed};
+	updateFeed(post) {
+		const feed = { ...this.state.feed };
 		const timestamp = Date.now();
 		feed[`post-${timestamp}`] = post;
-		this.setState({feed})
+		this.setState({ feed });
 	}
 
 	render() {
 		return (
 			<div className="App">
-				<Feed feedState={this.state.feed}/>
-				<ActionButton updateActionButton={this.updateActionButton} buttonState={this.state.actionButton.status}/>
-				<Upload updateFeed={this.updateFeed} buttonState={this.state.actionButton.status}/>
+				<Feed feedState={this.state.feed} />
+				<ActionButton updateActionButton={this.updateActionButton} buttonState={this.state.actionButton.status} />
+				<Upload updateFeed={this.updateFeed} buttonState={this.state.actionButton.status} />
 			</div>
 		);
 	}
