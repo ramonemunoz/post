@@ -3,6 +3,7 @@ import ActionButton from './components/ActionButton';
 import Upload from './components/Upload';
 import Feed from './components/Feed';
 import base from './base.js';
+import Header from './components/Header';
 import './App.css';
 
 class App extends Component {
@@ -15,13 +16,29 @@ class App extends Component {
 			actionButton: {
 				status: 'notClicked'
 			},
-			feed: {}
+			feed: {},
+			windowEvents: {
+				scroll: 'false'
+			}
 		};
 	}
 	componentWillMount() {
 		this.ref = base.syncState('/posts', {
 			context: this,
 			state: 'feed'
+		});
+	}
+	componentDidMount() {
+		window.addEventListener('scroll', event => {
+			var scrollStatus;
+			if (window.pageYOffset > 20) {
+				scrollStatus = 'true';
+			} else {
+				scrollStatus = 'false';
+			}
+			const windowEvents = { ...this.state.windowEvents };
+			windowEvents['scroll'] = scrollStatus;
+			this.setState({ windowEvents });
 		});
 	}
 	componentWillUnmount() {
@@ -37,14 +54,18 @@ class App extends Component {
 
 	updateFeed(post) {
 		const feed = { ...this.state.feed };
+		const actionButton = { ...this.state.actionButton };
+		actionButton['status'] = 'notClicked';
 		const timestamp = Date.now();
 		feed[`post-${timestamp}`] = post;
 		this.setState({ feed });
+		this.setState({ actionButton });
 	}
 
 	render() {
 		return (
 			<div className="App">
+				<Header windowState={this.state.windowEvents.scroll} />
 				<Feed feedState={this.state.feed} />
 				<ActionButton updateActionButton={this.updateActionButton} buttonState={this.state.actionButton.status} />
 				<Upload updateFeed={this.updateFeed} buttonState={this.state.actionButton.status} />
