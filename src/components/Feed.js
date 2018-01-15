@@ -17,7 +17,7 @@ class Feed extends React.Component {
 		return (
 			<div className="container">
 				{/* <img className="image" src={this.props.url} /> */}
-				{Object.keys(this.props.feedState).map(this.renderFeed)}
+				{Object.keys(this.props.feedState).reverse().map(this.renderFeed)}
 			</div>
 		);
 	}
