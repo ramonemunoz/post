@@ -17,6 +17,7 @@ class App extends Component {
 				status: 'notClicked'
 			},
 			feed: {},
+			feedStateLoading: 'true',
 			windowEvents: {
 				scroll: 'false'
 			}
@@ -25,7 +26,11 @@ class App extends Component {
 	componentWillMount() {
 		this.ref = base.syncState('/posts', {
 			context: this,
-			state: 'feed'
+			state: 'feed',
+			then(data) {
+				var feedStateLoading = {feedStateLoading: 'false'}
+				this.setState(feedStateLoading)
+			},
 		});
 	}
 	componentDidMount() {
@@ -66,7 +71,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header windowState={this.state.windowEvents.scroll} />
-				<Feed feedState={this.state.feed} />
+				<Feed feedState={this.state.feed} feedLoading={this.state.feedStateLoading} />
 				<ActionButton updateActionButton={this.updateActionButton} buttonState={this.state.actionButton.status} />
 				<Upload updateFeed={this.updateFeed} buttonState={this.state.actionButton.status} />
 			</div>

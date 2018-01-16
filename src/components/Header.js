@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
 	render() {
+		console.log('%c How can I help you! ', 'color: #00dbdb');
 		const windowScroll = this.props.windowState;
 		var border, logoSize, menuSize;
 		if (windowScroll === 'true') {
