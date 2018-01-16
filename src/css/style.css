@@ -28,7 +28,7 @@ body {
   list-style: none;
 }
 .nav a {
-  margin: 10px 10px 0px 10px;
+  margin: 10px 10px 0px 0px;
   color: #000;
   display: block;
   padding-right: 60px;
@@ -41,6 +41,7 @@ body {
 .nav .logo {
   font-size: 64px;
   margin-bottom: -14px;
+  padding-left: 20px;
 }
 
 .container {
