@@ -31,14 +31,19 @@ class App extends Component {
     };
   }
   componentWillMount() {
-    this.ref = base.syncState("/posts", {
-      context: this,
-      state: "feed",
-      then(data) {
+      this.ref = base.fetch('/posts', {
+        context: this,
+      }).then(data => {
         var feedStateLoading = { feedStateLoading: "false" };
         this.setState(feedStateLoading);
-      }
-    });
+        var feed = { ...this.state.feed };
+        feed = data;
+        this.setState({ feed });
+        console.log(data);
+      }).catch(error => {
+        //handle error
+         console.log('error');
+      })
   }
   componentDidMount() {
     window.addEventListener("scroll", event => {
@@ -69,7 +74,7 @@ class App extends Component {
     const actionButton = { ...this.state.actionButton };
     actionButton["status"] = "notClicked";
     const timestamp = Date.now();
-	feed[`post-${timestamp}`] = post;
+	 feed[`post-${timestamp}`] = post;
     this.setState({ feed });
     this.setState({ actionButton });
   }
