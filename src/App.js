@@ -15,6 +15,8 @@ class App extends Component {
     this.model = this.model.bind(this);
     this.postAction = this.postAction.bind(this);
     this.saveTemp = this.saveTemp.bind(this);
+     this.handleScroll = this.handleScroll.bind(this);
+     this.headerShrink = this.headerShrink.bind(this);
     //get initial state
     this.state = {
       actionButton: {
@@ -33,6 +35,9 @@ class App extends Component {
   componentWillMount() {
       this.ref = base.fetch('/posts', {
         context: this,
+        queries: {
+          limitToLast: 3
+        }
       }).then(data => {
         var feedStateLoading = { feedStateLoading: "false" };
         this.setState(feedStateLoading);
@@ -46,20 +51,13 @@ class App extends Component {
       })
   }
   componentDidMount() {
-    window.addEventListener("scroll", event => {
-      var scrollStatus;
-      if (window.pageYOffset > 20) {
-        scrollStatus = "true";
-      } else {
-        scrollStatus = "false";
-      }
-      const windowEvents = { ...this.state.windowEvents };
-      windowEvents["scroll"] = scrollStatus;
-      this.setState({ windowEvents });
-    });
+    window.addEventListener("scroll", this.headerShrink);
+    window.addEventListener("scroll", this.handleScroll);
   }
   componentWillUnmount() {
     base.removeBinding(this.ref);
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.headerShrink);
   }
 
   updateActionButton(actionButtonState) {
@@ -116,6 +114,31 @@ class App extends Component {
       console.log('did not post');
     });
   };
+
+  headerShrink(){
+    var scrollStatus;
+      if (window.pageYOffset > 20) {
+        scrollStatus = "true";
+      } else {
+        scrollStatus = "false";
+      }
+      const windowEvents = { ...this.state.windowEvents };
+      windowEvents["scroll"] = scrollStatus;
+      this.setState({ windowEvents });
+  }
+   handleScroll() {
+    const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    const body = document.body;
+    const html = document.documentElement;
+    const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+    const windowBottom = windowHeight + window.pageYOffset;
+    if (windowBottom >= docHeight) {
+      console.log('bottom');
+    } else {
+      console.log('not at bottom');
+    }
+  }
+
 
  
 
