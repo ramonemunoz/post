@@ -77,6 +77,7 @@ class App extends Component {
 	 feed[`post-${timestamp}`] = post;
     this.setState({ feed });
     this.setState({ actionButton });
+    
   }
 
   saveTemp(post){
@@ -100,10 +101,23 @@ class App extends Component {
 	const feed = { ...this.state.feed };
 	const timestamp = Date.now();
 	feed[`post-${timestamp}`] = tempFeed;
-    postAction = action;
+  postAction = action;
 	this.setState({ postAction });
-	this.setState({ feed });
-  }
+  this.setState({ feed });
+   base.post(`/posts/post-${timestamp}`, {
+      data:{
+        name:tempFeed['name'],
+        src:tempFeed['src']
+      }
+    }).then(() => {
+      console.log('posted');
+    }).catch(err => {
+      // handle error
+      console.log('did not post');
+    });
+  };
+
+ 
 
   render() {
     return (
