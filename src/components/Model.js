@@ -11,7 +11,6 @@ class Model extends React.Component {
   }
   render() {
     const show = this.props.modelState;
-    console.log(show);
     return (
       <div>
         <PopPop

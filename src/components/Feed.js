@@ -16,6 +16,7 @@ class Feed extends React.Component {
   }
   render() {
     const loading = this.props.feedLoading;
+    const feedPosition = this.props.feedPosition;
     let feed = null;
     if (loading === "true") {
       feed = (
@@ -40,9 +41,14 @@ class Feed extends React.Component {
         </div>
       );
     } else {
-      feed = Object.keys(this.props.feedState)
-        .reverse()
-        .map(this.renderFeed);
+        if(feedPosition >= 3 ){
+          feed = Object.keys(this.props.feedState)
+          .map(this.renderFeed); 
+        }
+        else{
+          feed = Object.keys(this.props.feedState)
+            .map(this.renderFeed);
+        }
     }
     return <div className="container">{feed}</div>;
   }

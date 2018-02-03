@@ -25,6 +25,7 @@ class App extends Component {
       feed: {},
       tempFeed: null,
       feedStateLoading: "true",
+      feedPosition: 0,
       modelState: false,
       postAction: "",
       windowEvents: {
@@ -36,7 +37,7 @@ class App extends Component {
       this.ref = base.fetch('/posts', {
         context: this,
         queries: {
-          limitToLast: 3
+          limitToLast: 8
         }
       }).then(data => {
         var feedStateLoading = { feedStateLoading: "false" };
@@ -44,6 +45,9 @@ class App extends Component {
         var feed = { ...this.state.feed };
         feed = data;
         this.setState({ feed });
+        var feedPosition = {...this.state.feedPosition};
+        feedPosition = 8;
+        this.setState({feedPosition});
         console.log(data);
       }).catch(error => {
         //handle error
@@ -72,7 +76,7 @@ class App extends Component {
     const actionButton = { ...this.state.actionButton };
     actionButton["status"] = "notClicked";
     const timestamp = Date.now();
-	 feed[`post-${timestamp}`] = post;
+	  feed[`post-${timestamp}`] = post;
     this.setState({ feed });
     this.setState({ actionButton });
     
@@ -82,7 +86,7 @@ class App extends Component {
 	var tempFeed = { ...this.state.tempFeed };
     const actionButton = { ...this.state.actionButton };
     actionButton["status"] = "notClicked";
-	tempFeed = post;
+	  tempFeed = post;
     this.setState({ tempFeed });
     this.setState({ actionButton });
   }
@@ -134,6 +138,32 @@ class App extends Component {
     const windowBottom = windowHeight + window.pageYOffset;
     if (windowBottom >= docHeight) {
       console.log('bottom');
+      var currentFeedPosition = this.state.feedPosition;
+
+      this.ref = base.fetch('/posts', {
+        context: this,
+        queries: {
+          limitToLast: currentFeedPosition
+        }
+      }).then(data => {
+        var feedStateLoading = { feedStateLoading: "false" };
+        this.setState(feedStateLoading);
+
+        var newFeedPostion = this.state.feedPosition + 8;
+        this.setState({feedPosition :newFeedPostion });
+
+        var feed = { ...this.state.feed};
+        console.log(data);
+        Object.assign(feed, data)
+        this.setState({ feed});
+        console.log(data);
+      }).catch(error => {
+        //handle error
+         console.log('error');
+      })
+      
+
+
     } else {
       console.log('not at bottom');
     }
@@ -149,6 +179,7 @@ class App extends Component {
         <Feed
           feedState={this.state.feed}
           feedLoading={this.state.feedStateLoading}
+          feedPosition={this.state.feedPosition}
         />
         <ActionButton
           updateActionButton={this.updateActionButton}
