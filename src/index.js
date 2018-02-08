@@ -5,6 +5,7 @@ import './index.css';
 import './css/style.css';
 import App from './App';
 import About from './components/About';
+import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -15,6 +16,7 @@ const Root = () => {
 				<Switch>
 					<Route exact path="/" component={App} />
 					<Route exact path="/about" component={About} />
+					<Route exact path="/contact" component={Contact} />
 					<Route component={NotFound} />
 				</Switch>
 			</div>

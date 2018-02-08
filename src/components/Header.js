@@ -29,9 +29,9 @@ class Header extends React.Component {
 							</Link>
 						</li>
 						<li>
-							<a href="/contact" id="menuOne" className={`${menuSize} menuLink`}>
+							<Link id="menuOne" className={`${menuSize} menuLink`} to="/contact">
 								Contact
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</nav>

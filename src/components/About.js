@@ -8,17 +8,11 @@ class About extends React.Component {
 				<Header />
 				<div className="container">
 					<div className="textContainer">
-						<h2>Title</h2>
+						<h2>Welcome</h2>
+						<p>This website was made as a response to the non-chronological feeds we all experience every day.</p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras bibendum tristique iaculis. Suspendisse
-							tempor elementum lacus, eget porta magna laoreet nec. Donec vehicula metus sed congue rutrum. Morbi
-							dapibus arcu magna, a dapibus odio elementum aliquet. Cras sit amet est id diam efficitur viverra a sed
-							lacus. Quisque eu nulla est. Aenean dignissim sapien risus, in aliquet nisl rutrum id. Cras rhoncus mauris
-							vitae nibh laoreet bibendum. Duis ac lorem fringilla, auctor tortor quis, semper felis. Nam molestie arcu
-							a nunc blandit sagittis. Praesent in est vitae ex feugiat vestibulum. Cras nec sem sit amet tellus aliquet
-							suscipit vel id metus. Maecenas hendrerit enim elit, at sagittis mi accumsan sed. Nulla et malesuada
-							lorem. Etiam aliquet mattis massa, non mollis libero congue sagittis. Aenean in ante non velit fringilla
-							dignissim.
+							Please feel free to post some of your creative work that didn't make it to your social media. Their's no
+							accounts, likes, applauses...etc.
 						</p>
 					</div>
 				</div>
